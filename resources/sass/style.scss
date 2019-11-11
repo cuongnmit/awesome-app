@@ -16,12 +16,16 @@ header {
     padding-top: 50px;
 }
 
-.ui.menu {
-    .brand-logo {
+.ui.secondary.menu {
+    a.brand-logo {
         color: white;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
         margin: 0;
+        &:hover {
+            color: #f0932b;
+            background: transparent;
+        }
     }
     a.btn-toggle-sidebar {
         width: 50px;
@@ -31,7 +35,7 @@ header {
 
     i.humberger-icon {
         color: #FFFFFF;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         margin: 0 !important;
     }

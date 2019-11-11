@@ -7,20 +7,18 @@
                 <div class="ui huge header centered login-header">{{ __('Login') }}</div>
                 <form method="POST" action="{{ route('login') }}" class="ui form">
                     @csrf
-                    <div class="field">
-                        <label for="email"></label>
-                        <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <div class="field required @error('email') error @enderror">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
-                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        <div class="ui error message"><strong>{{ $message }}</strong></div>
                         @enderror
                     </div>
-                    <div class="field">
-                        <label for="password"></label>
+                    <div class="field required @error('password') error @enderror">
+                        <label for="password">Password</label>
                         <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                         @error('password')
-                        <div class="ui error message">
-                            <strong>{{ $message }}</strong>
-                        </div>
+                        <div class="ui error message"><strong>{{ $message }}</strong></div>
                         @enderror
                     </div>
 
