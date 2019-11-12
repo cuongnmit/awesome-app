@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container login-container">
         <div class="ui middle aligned grid">
             <div class="column">
                 <div class="ui huge header centered login-header">{{ __('Login') }}</div>

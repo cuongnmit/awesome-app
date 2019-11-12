@@ -1,6 +1,9 @@
 $base-color: #74BFDE;
+$green: #27A31C;
+$grey: #A6A6A6;
+
 html, body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 }
 header {
@@ -14,6 +17,12 @@ header {
     min-height: 100vh;
     width: 100%;
     padding-top: 50px;
+    margin-bottom: 20px;
+    background-size: cover;
+    background: url("./../img/landing.svg") no-repeat;
+    @media only screen and (min-width: 415px) {
+        background: transparent;
+    }
 }
 
 .ui.secondary.menu {
@@ -41,20 +50,12 @@ header {
     }
 }
 
-.landing-img {
-    width: 100%;
-
-    @media only screen and (min-width: 500px) {
-        display: none;
-    }
-}
-
 .content {
     margin-top: 20px;
 }
 
 .container {
-    margin: 0 1rem;
+    padding: 0 1rem;
 }
 
 .login-header {
@@ -71,5 +72,80 @@ header {
         height: 2px;
         background-color: $base-color;
         margin: 0 auto;
+    }
+}
+
+.content {
+    padding-top: 200px;
+    @media only screen and (min-width: 415px) {
+        padding-top: 20px;
+    }
+}
+
+.transaction {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto 20px;
+    background: transparent;
+    border: 1px solid rgba(116, 191, 222, 0.5);;
+    box-shadow: 0 4px 4px rgba(116, 191, 222, 0.25);
+}
+
+.record {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+    padding: 5px 10px;
+    align-items: center;
+    height: 100%;
+    &__circle-icon {
+        color: $base-color;
+        width: 10%;
+    }
+    &__detail {
+        color: $grey;
+        width: 50%;
+    }
+    &__created-at {
+        color: $grey;
+        width: 30%;
+    }
+    &__angle-icon {
+        color: $grey;
+        width: 10%;
+    }
+}
+
+.selector {
+    height: 50px;
+    width: 100%;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.range {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+    height: 100%;
+    align-items: center;
+    padding: 0 0 0 5%;
+
+    &__today, &__week, &__month {
+        width: 90px;
+    }
+
+    &__link {
+        color: $grey;
+        &.active {
+            color: $base-color;
+        }
+        &:hover, &:focus {
+            color: $base-color;
+        }
     }
 }

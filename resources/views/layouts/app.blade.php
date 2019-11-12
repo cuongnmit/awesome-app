@@ -25,7 +25,6 @@
             @includeIf('includes.header')
         </header>
         <div class="wrapper">
-            <img src="{{ asset('img/landing.svg') }}" class="landing-img" alt="landing page">
             <div class="content">
                 @yield('content')
             </div>
