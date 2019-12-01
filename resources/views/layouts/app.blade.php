@@ -10,25 +10,23 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('img/favicon-32x32.png') }}">
-    <link href="{{ asset('semantic/dist/semantic.min.css') }}" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="{{ asset('semantic/dist/semantic.min.js') }}"></script>
-
-    <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/main.js') }}"></script>
+    <link href="{{ asset('semantic/semantic.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
-    @includeIf('includes.sidebar')
-    <div class="pusher">
-        <header class="header">
-            @includeIf('includes.header')
-        </header>
-        <div class="wrapper">
-            <div class="content">
-                @yield('content')
-            </div>
+@includeIf('includes.sidebar')
+<div class="pusher">
+    <header class="header">
+        @includeIf('includes.header')
+    </header>
+    <div class="wrapper">
+        <div class="content">
+            @yield('content')
         </div>
     </div>
+</div>
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('semantic/semantic.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
