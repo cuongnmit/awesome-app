@@ -13,5 +13,6 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/', 'TransactionController@index')->name('home');
+Route::post('/transactions/add', 'TransactionController@store')->name('transaction.store');
+Route::get('/logout', 'Auth\LoginController@logout');

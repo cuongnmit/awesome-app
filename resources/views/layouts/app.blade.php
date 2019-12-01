@@ -20,13 +20,13 @@
         @includeIf('layouts.header')
     </header>
     <div class="wrapper">
-        <div class="content">
+        <div class="main-content">
             @yield('content')
         </div>
     </div>
 </div>
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('semantic/semantic.js') }}"></script>
-<script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
