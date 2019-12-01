@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container login-container">
-        <div class="ui middle aligned grid">
+        <div class="ui middle aligned grid login">
             <div class="column">
-                <div class="ui huge header centered login-header">{{ __('Login') }}</div>
+                <div class="ui huge header centered login__header">{{ __('Login') }}</div>
                 <form method="POST" action="{{ route('login') }}" class="ui form">
                     @csrf
                     <div class="field required @error('email') error @enderror">
@@ -21,7 +21,6 @@
                         <div class="ui error message"><strong>{{ $message }}</strong></div>
                         @enderror
                     </div>
-
                     <div class="field">
                         <div class="ui checkbox">
                             <input class="hidden" type="checkbox" name="remember"
@@ -30,16 +29,11 @@
                         </div>
                     </div>
                     <button type="submit" class="ui fluid button">{{ __('Login') }}</button>
-                    {{--<div class="form-group row mb-0">--}}
-                    {{--<div class="col-md-8 offset-md-4">--}}
-                    {{--@if (Route::has('password.request'))--}}
-                    {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
-                    {{--{{ __('Forgot Your Password?') }}--}}
-                    {{--</a>--}}
-                    {{--@endif--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
                 </form>
+                <div class="login__register-link">
+                    <span>Do not have an account?</span>
+                    <a class="btn btn-link" href="{{ route('register') }}">{{ __('Register Now') }}</a>
+                </div>
             </div>
         </div>
     </div>

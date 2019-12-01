@@ -14,7 +14,7 @@ header {
     background: $base-color;
 }
 .wrapper {
-    min-height: 100vh;
+    min-height: calc(100vh - 50px);
     width: 100%;
     padding-top: 50px;
     margin-bottom: 20px;
@@ -56,23 +56,6 @@ header {
 
 .container {
     padding: 0 1rem;
-}
-
-.login-header {
-    text-transform: uppercase;
-    position: relative;
-    margin: 0;
-    &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -5px;
-        width: 150px;
-        height: 2px;
-        background-color: $base-color;
-        margin: 0 auto;
-    }
 }
 
 .content {
@@ -146,6 +129,34 @@ header {
         }
         &:hover, &:focus {
             color: $base-color;
+        }
+    }
+}
+
+.login {
+    &__register-link {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    &__header {
+        text-transform: uppercase;
+        position: relative;
+        margin: 0;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -5px;
+            width: 150px;
+            height: 2px;
+            background-color: $base-color;
+            margin: 0 auto;
         }
     }
 }
