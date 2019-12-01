@@ -1,4 +1,15 @@
+# Libraries folder
 /node_modules/
-/bower_components/
+
+# PHP libraries folder
 /vendor/
+
+# Bundled asset files folder
 /public/
+
+# Bower components
+/bower_components/
+/resources/bower_components/
+
+*.log
+/tests/
