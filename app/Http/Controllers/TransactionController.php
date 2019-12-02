@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaction;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
     protected $transaction;
 
-    public function __construct()
+    public function __construct(Transaction $transaction)
     {
         $this->middleware('auth');
+        $this->transaction = $transaction;
     }
 
     /**
@@ -21,6 +23,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $amount = ['label' => 'Amount', 'name' => 'amount',
             'title' => 'Amount', 'placeholder' => 'VND', 'required' => true];
 
@@ -36,8 +39,11 @@ class TransactionController extends Controller
             ['name' => 'Other', 'value' => 4]
         ];
         $categories['options'] = $options;
-        $transactions = Transaction::all();
-        $data = compact('amount', 'description', 'categories', 'transactions');
+
+        $transactions = $this->transaction::where('user_id', $user->id)->get();
+
+        $user = ['name' => 'user_id', 'value' => $user->id, 'hidden' => true, 'required' => true];
+        $data = compact('amount', 'description', 'categories', 'transactions', 'user');
 
         return view('transaction.home', $data);
     }

@@ -3,6 +3,9 @@
     <div class="content">
         <form class="ui form add-transaction-form" action="{{ route('transaction.store') }}" method="POST">
             @csrf
+            @component('components.input_hidden', $user)
+            @endcomponent
+
             @component('components.input_text', $amount)
             @endcomponent
 

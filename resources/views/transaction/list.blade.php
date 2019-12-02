@@ -1,9 +1,6 @@
 <div class="transactions cards">
     @foreach($transactions as $transaction)
         <div class="ui card transaction">
-            <div class="image">
-                <img src="{{ url('https://source.unsplash.com/300x150/?cartoon') }}" alt="random-image">
-            </div>
             <div class="content">
                 <div class="header">{{ $transaction['amount'] }}</div>
                 <div class="description">{{ $transaction['description'] }}</div>
